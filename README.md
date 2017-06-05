@@ -6,6 +6,6 @@ terraform with git, bash and openssh, removed entrypoint so it can be used in a 
 Simply build the image with the provided Dockerfile using the following commands: 
 
 ```bash
-docker build -t pli-docker/terraform:latest .
-docker push pli-docker/terraform
+docker build -t patrickl/terraform:latest .
+docker push patrickl/terraform
 ```
