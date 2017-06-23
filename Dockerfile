@@ -1,7 +1,7 @@
 FROM golang:alpine
 MAINTAINER "Patrick Lindeman <patrick@plicon.nl>"
 
-ENV TERRAFORM_VERSION=0.9.6
+ENV TERRAFORM_VERSION=0.10.0-beta1
 
 RUN apk add --update git bash openssh
 
