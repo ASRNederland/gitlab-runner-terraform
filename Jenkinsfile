@@ -3,10 +3,25 @@ pipeline {
       label 'master'
    }
    stages {
-      stage ('Workdir preperation'){
+      stage ('Checkout Terraform'){
          steps {
-            sh "echo test"
+            git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/terraform.git'
          }    
+      }
+      stage ('Checkout ansible-gce'){
+         steps {
+            git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/ansible-gce.git'
+         }    
+      }
+      stage ('Checkout Terraform'){
+         steps {
+            git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/plc-rnd/ceph.git'
+         }    
+      }
+      stage ('list directory structur'){
+         steps {
+            sh "ls -al"
+         }
       }
    }
 }
