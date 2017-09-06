@@ -3,26 +3,23 @@ pipeline {
       label 'master'
    }
    stages {
-      stage ('Checkout Terraform'){
+     stage ('Checkout ansible-gce'){
          steps {
-            dir ('Terraform'){
-               git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/terraform.git'
+            dir ('ansible-gce'){     
+               git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/ansible-gce.git'
             }
-         }    
-      }
-      stage ('Checkout ansible-gce'){
-         steps {
-            git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/ansible-gce.git'
          }    
       }
       stage ('Checkout Ceph'){
          steps {
-            git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/plc-rnd/ceph.git'
+            dir ('ceph'){
+               git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/plc-rnd/ceph.git'
+            }
          }    
       }
       stage ('list directory structur'){
          steps {
-            sh "ls -al"
+            sh "ls -alr"
          }
       }
    }
