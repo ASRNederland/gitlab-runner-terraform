@@ -19,7 +19,7 @@ pipeline {
       }
       stage ('list directory structur'){
          steps {
-            sh "ls -alr"
+            sh "ls -al */"
          }
       }
    }
