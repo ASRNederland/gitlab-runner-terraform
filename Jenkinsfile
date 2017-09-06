@@ -4,7 +4,9 @@ pipeline {
    }
    stages {
       stage ('Workdir preperation'){
-         sh "echo test"
+         steps {
+            sh "echo test"
+         }    
       }
    }
 }
