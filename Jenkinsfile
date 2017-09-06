@@ -5,7 +5,9 @@ pipeline {
    stages {
       stage ('Checkout Terraform'){
          steps {
-            git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/terraform.git'
+            dir ('Terraform'){
+               git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/terraform.git'
+            }
          }    
       }
       stage ('Checkout ansible-gce'){
