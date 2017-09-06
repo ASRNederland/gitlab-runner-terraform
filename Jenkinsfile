@@ -13,7 +13,7 @@ pipeline {
             git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/pli-docker/ansible-gce.git'
          }    
       }
-      stage ('Checkout Terraform'){
+      stage ('Checkout Ceph'){
          steps {
             git credentialsId: 'plicon_gitlab', url: 'https://gitlab.com/plc-rnd/ceph.git'
          }    
