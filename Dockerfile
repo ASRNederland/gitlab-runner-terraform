@@ -1,4 +1,4 @@
-FROM centos:7
+FROM golang:alpine
 MAINTAINER "Patrick Lindeman <patrick@plicon.nl>"
 
 ENV TERRAFORM_VERSION=0.12.17
